@@ -1,4 +1,4 @@
-package twoPointer;
+package twoPointers;
 
 import java.util.Objects;
 
