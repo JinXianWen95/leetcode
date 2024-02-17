@@ -1,3 +1,5 @@
+package other;
+
 import java.util.*;
 
 public class RepeatedDnaSequence_187 {
