@@ -2,6 +2,7 @@ package array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class MinimumNumberOfArrowsToBurstBallons_452 {
@@ -10,11 +11,14 @@ public class MinimumNumberOfArrowsToBurstBallons_452 {
     }
     public int findMinArrowShots(int[][] points) {
         // the question is find the interval adn narrow it
+
+        // Solution 1: ordey by start point
+        /*
         if (points.length == 0) {
             return 0;
         }
         Integer[][] input = convert(points);
-        Arrays.sort(input, new Comparator());
+        Arrays.sort(input, Comparator.comparingInt(a -> a[0]));
         int counter = 0;
         int i = 0;
         while (i < input.length) {
@@ -31,28 +35,23 @@ public class MinimumNumberOfArrowsToBurstBallons_452 {
             counter++;
         }
         return counter;
-    }
 
-    private Integer[][] convert(int[][] points) {
-        Integer[][] result = new Integer[points.length][points[0].length];
-        for (int i = 0; i < points.length; i++) {
-            for (int j = 0; j < points[i].length; j++) {
-                result[i][j] = points[i][j];
-            }
-        }
-        return result;
-    }
+         */
 
-    private static class Comparator implements java.util.Comparator<Integer[]> {
-        @Override
-        public int compare(Integer[] o1, Integer[] o2) {
-            if (o1[0] < o2[0]) {
-                return -1;
-            } else if (o1[0].equals(o2[0])) {
-                return o1[1].compareTo(o2[1]);
-            } else {
-                return 1;
-            }
+        // Solution 2: order by end point
+        if (points.length == 0) {
+            return 0;
         }
+        Arrays.sort(points, Comparator.comparingInt(a -> a[1]));
+        int counter = 1;
+        int[] currentPoint = points[0];
+        for (int i = 1; i < points.length; i++) {
+            if (currentPoint[1] >= points[i][0]) {
+                continue;
+            }
+            counter++;
+            currentPoint = points[i];
+        }
+        return counter;
     }
 }
