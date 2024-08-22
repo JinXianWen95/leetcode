@@ -8,6 +8,9 @@ public class MinimumHeightTree_310 {
     // 1 - 2 - 3 -> 2 is the result
     // the question is to find the central node that has the minimum path to the all leaf node
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
+        if (n <= 1) {
+            return List.of(0);
+        }
         // create the graph and count the degree of each node
         Map<Integer, List<Integer>> adjList = new HashMap<>();
         int[] degrees = new int[n];
