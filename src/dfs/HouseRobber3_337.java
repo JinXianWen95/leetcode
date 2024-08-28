@@ -19,7 +19,7 @@ public class HouseRobber3_337 {
         int[] right = dfs(node.right);
 
         int including = node.val + left[1] + right[1]; // by including current node, we cannot include its sons
-        int excluding = left[0] + right[0];
+        int excluding = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
         return new int[] {including, excluding};
 
     }
