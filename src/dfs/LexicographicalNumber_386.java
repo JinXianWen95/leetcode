@@ -3,7 +3,7 @@ package dfs;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LexicographicalNUmber_386 {
+public class LexicographicalNumber_386 {
     public List<Integer> lexicalOrder(int n) {
         List<Integer> result = new ArrayList<>();
         dfs(1, n, result);

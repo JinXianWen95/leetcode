@@ -19,13 +19,11 @@ public class DeleteNodesFromLinkedListPresentInArray_3217 {
         head = prev;
         ListNode curr = prev.next;
         while (curr != null) {
-            if (numbers.contains(curr.val)) {
-                curr = curr.next;
-            } else {
+            if (!numbers.contains(curr.val)) {
                 prev.next = curr;
                 prev = curr;
-                curr = curr.next;
             }
+            curr = curr.next;
         }
         // skip the end nodes with val in array
         prev.next = null;
