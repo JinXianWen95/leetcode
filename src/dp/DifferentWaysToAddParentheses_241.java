@@ -32,7 +32,7 @@ public class DifferentWaysToAddParentheses_241 {
                 }
             }
         }
-        memo.compute(expression, (k, v) -> values);
+        memo.put(expression, values);
         return values;
     }
 
