@@ -3,9 +3,6 @@ package dp;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class MinimumCostForTickets_983 {
     public int mincostTickets(int[] days, int[] costs) {
