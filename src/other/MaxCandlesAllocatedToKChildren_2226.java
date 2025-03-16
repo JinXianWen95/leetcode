@@ -9,7 +9,7 @@ public class MaxCandlesAllocatedToKChildren_2226 {
 
         while (minimum < maximum) {
             int mid = (minimum + maximum) / 2;
-            int children = 0;
+            long children = 0;
             for (int candy : candies) {
                 if (candy >= mid) {
                     children += candy / mid;
