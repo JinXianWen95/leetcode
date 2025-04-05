@@ -10,7 +10,6 @@ public class PartitionArrayAccordingToPivot_2161 {
         equalThanCount++;
       } else if (num < pivot) {
         lessThanCount++;
-      } else {
       }
     }
 
