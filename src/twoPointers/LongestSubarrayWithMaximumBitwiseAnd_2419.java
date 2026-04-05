@@ -2,7 +2,7 @@ package twoPointers;
 
 import java.util.Arrays;
 
-public class LongestSubaarayWithMaximumBitwiseAnd_2419 {
+public class LongestSubarrayWithMaximumBitwiseAnd_2419 {
     public int longestSubarray(int[] nums) {
         int counter = 0;
         int result = 0;
